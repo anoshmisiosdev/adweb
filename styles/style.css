@@ -5,6 +5,9 @@ body {
     background-color: #000000;
     color: #ffffff;
     filter: brightness(1.2) contrast(1.2);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
 }
 
 header {
@@ -49,9 +52,8 @@ footer {
     padding: 20px 0;
     background: #1e1e1e;
     color: #ffffff;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    position: relative; /* Ensure it stays below the content */
     filter: brightness(1.5);
 }
 .centered-text {
@@ -82,4 +84,179 @@ footer {
     font-size: 24px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     pointer-events: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-image: url('../IMG_3612.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.hdr {
+    filter: brightness(1.2) contrast(1.2);
+}
+
+header {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+}
+
+header.hdr {
+    filter: brightness(1.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 20;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1e1e1e;
+    color: #ffffff;
+    width: 100%;
+    position: relative; /* Ensure it stays below the content */
+}
+
+footer.hdr {
+    filter: brightness(1.5);
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.img-column {
+    width: 48%;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+img.unselected {
+    filter: grayscale(100%);
+}
+
+.img-column:hover img {
+    transform: scale(1.1);
+    filter: none;
+}
+
+button.img-button {
+    border: none;
+    background: none;
+    padding: 0;
+    position: relative;
+}
+
+.img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 85vh; /* Full viewport height */
+    flex: 1; /* Allow the main content to grow and take up available space */
+}
+
+.zoom-container {
+    width: 80%; /* Take up most of the page width */
+    max-width: 1200px; /* Optional: Limit the maximum size */
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; /* Center the container horizontally */
+    cursor: pointer;
+}
+
+.zoom-container img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoom-container:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
 }

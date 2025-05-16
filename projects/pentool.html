@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Site</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Pen Tool Project</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <div id="topPlaceholder"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch("top.html")
+            fetch("../top.html")
                 .then(response => response.text())
                 .then(data => {
                     const parser = new DOMParser();
@@ -23,11 +23,10 @@
         });
     </script>
 
-    <main style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <div class="container" style="text-align: center;">
-            <article>
-                <p style="font-family: Arial, sans-serif; filter: brightness(1.2) contrast(1.2); font-size: 200px; color: #000000;">Riyan's Portfolio</p>
-            </article>
+    <main>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <img src="../projects/Photos/RA_Pentool.jpg" alt="Pen Tool Project" style="max-width: 45%; height: auto;">
+            <img src="../projects/Photos/RA_3DPentool_113.jpg" alt="Pen Tool Project" style="max-width: 45%; height: auto;">
         </div>
     </main>
     <footer>

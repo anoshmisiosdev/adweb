@@ -160,31 +160,22 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <div style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
-        <a href="index.html">
-            <img src="Photos/Logo.png" alt="Logo" style="width: 100px; height: auto; display: block;">
-        </a>
-    </div>
-    <header>
-        <h1>Portfolio - American</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li>
-                    <a href="#">Projects</a>
-                    <div class="dropdown-content">
-                        <a href="../projects/portrait.html">Portrait</a>
-                        <a href="../projects/project2.html">American and Beauty</a>
-                        <a href="../projects/project3.html">World on Fire</a>
-                        <a href="../projects/trip_beau.html">Beauty Triptych</a>
-                    </div>
-                </li>
-                <li><a href="../contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <div id="topPlaceholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("../top.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const topContent = doc.querySelector("#top").innerHTML;
+                    document.getElementById("topPlaceholder").innerHTML = topContent;
+                })
+                .catch(error => console.error("Error loading top.html:", error));
+        });
+    </script>
+
         <div class="container">
             <img src="../projects/Photos/RA_BEAU_1028.jpg" alt="Beauty">
             <div class="sub" style="color: #ffffff; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px;">

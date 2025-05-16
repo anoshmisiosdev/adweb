@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Base</title>
-    <link rel="stylesheet" href="styles/style.css"> <!-- Link to external stylesheet -->
+    <title>Work Papers</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="topPlaceholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("top.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const topContent = doc.querySelector("#top").innerHTML;
+                    document.getElementById("topPlaceholder").innerHTML = topContent;
+                })
+                .catch(error => console.error("Error loading top.html:", error));
+        });
+    </script>
+
     <main>
         <section>
-            <h1>Welcome to the Website</h1>
-            <p>This is the base structure of the website.</p>
+            <h1>Work Papers</h1>
+            <div class="pdf-container">
+                <ul>
+                    <li><a href="WorkFolder/Copy%20of%20Job-application-form1.doc.pdf" target="_blank">Copy of Job Application Form</a></li>
+                    <li><a href="WorkFolder/Letter%20of%20Recommendation%20(Apr%2030,%202025%20at%202_23%20PM).pdf" target="_blank">Letter of Recommendation</a></li>
+                    <li><a href="WorkFolder/RA_Resume.pdf" target="_blank">RA Resume</a></li>
+                    <li><a href="WorkFolder/Riyan%20Anosh%20-%20Cover%20Letter%20.pdf" target="_blank">Riyan Anosh - Cover Letter</a></li>
+                    <li><a href="WorkFolder/Riyan Anosh_Commercial Photography 1_05092025.pdf" target="_blank">Commericial Photography 1</a></li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <p>&copy; 2025 Riyan Anosh. All rights reserved.</p>
     </footer>
 </body>
 </html>

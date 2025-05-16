@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Site</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Website Base</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <div id="topPlaceholder"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch("top.html")
+            fetch("../top.html")
                 .then(response => response.text())
                 .then(data => {
                     const parser = new DOMParser();
@@ -23,12 +24,10 @@
         });
     </script>
 
-    <main style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <div class="container" style="text-align: center;">
-            <article>
-                <p style="font-family: Arial, sans-serif; filter: brightness(1.2) contrast(1.2); font-size: 200px; color: #000000;">Riyan's Portfolio</p>
-            </article>
-        </div>
+    <main>
+        <section>
+            <img src="../projects/Photos/RA_BestSummer.jpg" alt="Best Summer Project" style="max-width: 100%; height: auto;">
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Riyan Anosh. All rights reserved.</p>

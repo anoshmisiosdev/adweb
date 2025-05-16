@@ -1,0 +1,64 @@
+<html id="top">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Work Papers</title>
+        <link rel="stylesheet" href="../styles/top.css">
+        <style>
+            /* Style for the dropdown menu */
+            .dropdown-content {
+                display: none; /* Hide the dropdown by default */
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            /* Style for dropdown links */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            /* Show the dropdown menu on hover */
+            nav ul li:hover .dropdown-content {
+                display: block;
+            }
+
+            /* Add hover effect for dropdown links */
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+    <div style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
+        <a href="../index.html">
+            <img src="../projects/Photos/Logo.png" alt="Logo" style="width: 100px; height: auto; display: block;">
+        </a>
+    </div>
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../work.html">Work Papers</a></li>
+                <li>
+                    <a href="#">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="../projects/portrait.html">Portrait</a>
+                        <a href="../projects/project2.html">American and Beauty</a>
+                        <a href="../projects/project3.html">World on Fire</a>
+                        <a href="../projects/trip_beau.html">Beauty Triptych</a>
+                        <a href="../projects/pentool.html">Pentool Photoshop</a>
+                        <a href="../projects/bestsummer.html">Best Summer Photo</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</html>

@@ -7,32 +7,49 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
-        <a href="index.html">
-            <img src="projects/Photos/Logo.png" alt="Logo" style="width: 100px; height: auto; display: block;">
-        </a>
-    </div>
-    <header>
-    <div id="branding">
-        <h1>About Me</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    </header>
+    <div id="topPlaceholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("top.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const topContent = doc.querySelector("#top").innerHTML;
+                    document.getElementById("topPlaceholder").innerHTML = topContent;
+                })
+                .catch(error => console.error("Error loading top.html:", error));
+        });
+    </script>
+
     <div class="container">
-        <div class="content">
+        <div class="content" style="color: #ffffff; background-color: rgba(0, 0, 0, 0.6); text-align: center;">
             <h2>Welcome to My Photography Page</h2>
-            <p>Hello! I'm a passionate photographer who loves capturing the beauty of the world through my lens. My journey in photography started a few years ago, and since then, I have been exploring different styles and techniques to improve my craft.</p>
-            <p>On this page, you will find a collection of my favorite photographs, ranging from landscapes to portraits. I hope you enjoy browsing through my work as much as I enjoyed creating it.</p>
-            <p>If you would like to get in touch with me for collaborations or inquiries, please visit the contact page.</p>
+            <p>
+            I am Riyan Anosh, a future architect of silicon landscapes, currently immersed in the electrifying energy of the Bay Area. 
+            My art form isn't confined to a traditional studio; it's the meticulous and imaginative crafting of digital worlds within 
+            computer engineering, with a keen aspiration to sculpt the very core of technology through chip design.
+            </p>
+            <p>
+            What sparks this creative fire? It's the relentless, awe-inspiring evolution of technology itself, that constant drive to 
+            push boundaries and invent. This same fascination spills over into the tangible world, manifesting in the exploration of 
+            Photoshop's digital canvas, where visual concepts take shape, and in the observant eye that captures the beauty and intricate 
+            patterns of the surrounding environment through photography.
+            </p>
+            <p>
+            Imagine seeing the logical elegance of a circuit diagram imbued with the visual depth of a photograph, the layered complexity 
+            of a chip design mirroring the nuanced adjustments within Photoshop. The current focus? Diving deeper into the fundamental 
+            principles of chip design, understanding the intricate dance of transistors and logic gates.
+            </p>
+            <p>
+            Why? Because at the heart of all that captivating technology lies the chip, the very engine that powers the digital age, and 
+            Riyan is driven to understand and ultimately contribute to its creation.
+            </p>
         </div>
     </div>
     <footer>
-        <p>© 2025 Riyan Anosh. All rights reserved.</p>
+        <p>&copy; 2025 Riyan Anosh. All rights reserved.</p>
     </footer>
 </body>
 </html>
